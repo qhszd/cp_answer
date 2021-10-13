@@ -1,2 +1,2 @@
 User-agent: *
-Sitemap: https://localhost:1313/sitemap.xml
+Sitemap: https://cps.shaozhd.com/sitemap.xml
