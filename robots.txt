@@ -1,2 +1,2 @@
 User-agent: *
-Sitemap: https://qhszd.github.io/cp_answer/sitemap.xml
+Sitemap: https://localhost:1313/sitemap.xml

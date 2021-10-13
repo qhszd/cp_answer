@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>category-2 on Even - A super concise theme for Hugo</title>
-    <link>https://qhszd.github.io/cp_answer/categories/category-2/</link>
+    <link>https://localhost:1313/categories/category-2/</link>
     <description>Recent content in category-2 on Even - A super concise theme for Hugo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 10 Jul 2018 00:00:00 +0800</lastBuildDate><atom:link href="https://qhszd.github.io/cp_answer/categories/category-2/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 10 Jul 2018 00:00:00 +0800</lastBuildDate><atom:link href="https://localhost:1313/categories/category-2/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Theme preview</title>
-      <link>https://qhszd.github.io/cp_answer/post/even-preview/</link>
+      <title>编译原理第二版答案目录</title>
+      <link>https://localhost:1313/post/even-preview/</link>
       <pubDate>Tue, 10 Jul 2018 00:00:00 +0800</pubDate>
       
-      <guid>https://qhszd.github.io/cp_answer/post/even-preview/</guid>
-      <description>Based on MarkdownPreview test.md. Markdown 1 2 3 4 5 6 7 8 # H1 ## H2 ### H3 #### H4 ##### H5 ###### H6 ### Duplicate Header ### Duplicate Header H1 H2 H3 H4 H5 H6 Duplicate Header Duplicate Header Paragraphs 1 2 3 4 This is a paragraph. I am still part of the paragraph. New paragraph. This is a paragraph. I am still part of the paragraph.</description>
+      <guid>https://localhost:1313/post/even-preview/</guid>
+      <description>第二章 第二节 第三节 第四节 第六节 第八节 本章要点 第三章 第一节 第三节 第四节 第五节 第六节 第七节 第八节 第九节 本章要点 第四章 第二节 第三节 第四节 第五节 第六</description>
     </item>
     
   </channel>
