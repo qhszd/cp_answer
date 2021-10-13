@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>8.4 - Even - A super concise theme for Hugo</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Wikipedia" /><meta name="description" content="Exercises for Section 8.4 8.4.1 Figure 8.10 is a simple matrix-multiplication program. Translate the program into three-address statements of the type we have been using in this section. Assume the matrix entries are numbers that require 8 bytes, and that matrices are stored in row-major order. Construct the flow graph for your code from (a). Identify the loops in your flow graph from (b). 1 2 3 4 5 6" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.88.1 with theme even" />
+
+
+<link rel="canonical" href="http://localhost:1313/post/ch08/8.4/8.4/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="8.4" />
+<meta property="og:description" content="Exercises for Section 8.4 8.4.1 Figure 8.10 is a simple matrix-multiplication program. Translate the program into three-address statements of the type we have been using in this section. Assume the matrix entries are numbers that require 8 bytes, and that matrices are stored in row-major order. Construct the flow graph for your code from (a). Identify the loops in your flow graph from (b). 1 2 3 4 5 6" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/post/ch08/8.4/8.4/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-08-30T01:37:56+08:00" />
+<meta property="article:modified_time" content="2021-08-30T01:37:56+08:00" />
+
+<meta itemprop="name" content="8.4">
+<meta itemprop="description" content="Exercises for Section 8.4 8.4.1 Figure 8.10 is a simple matrix-multiplication program. Translate the program into three-address statements of the type we have been using in this section. Assume the matrix entries are numbers that require 8 bytes, and that matrices are stored in row-major order. Construct the flow graph for your code from (a). Identify the loops in your flow graph from (b). 1 2 3 4 5 6"><meta itemprop="datePublished" content="2021-08-30T01:37:56+08:00" />
+<meta itemprop="dateModified" content="2021-08-30T01:37:56+08:00" />
+<meta itemprop="wordCount" content="1287">
+<meta itemprop="keywords" content="preview,中文,tag-1," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="8.4"/>
+<meta name="twitter:description" content="Exercises for Section 8.4 8.4.1 Figure 8.10 is a simple matrix-multiplication program. Translate the program into three-address statements of the type we have been using in this section. Assume the matrix entries are numbers that require 8 bytes, and that matrices are stored in row-major order. Construct the flow graph for your code from (a). Identify the loops in your flow graph from (b). 1 2 3 4 5 6"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Even</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Even</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">8.4</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2021-08-30 </span>
+        <div class="post-category">
+            <a href="/categories/%E4%B8%AD%E6%96%87/"> 中文 </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#841">8.4.1</a></li>
+            <li><a href="#842">8.4.2</a></li>
+            <li><a href="#note">Note</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <p>Exercises for Section 8.4</p>
+<h3 id="841">8.4.1</h3>
+<p>Figure 8.10 is a simple matrix-multiplication program.</p>
+<ol>
+<li>Translate the program into three-address statements of the type we have been using in this section. Assume the matrix entries are numbers that require 8 bytes, and that matrices are stored in row-major order.</li>
+<li>Construct the flow graph for your code from (a).</li>
+<li>Identify the loops in your flow graph from (b).</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">for (i=O; i&lt;n; i++)
+    for (j=O; j&lt;n; j++)
+        c[i][j] = 0.0;
+for (i=O; i&lt;n; i++)
+    for (j=O; j&lt;n; j++)
+        for (k=O; k&lt;n; k++)
+            ￼c[i][j] = c[i][j] + a[i][k]*b[k][j];
+</code></pre></td></tr></table>
+</div>
+</div><p>Figure 8.10: A matrix-multiplication algorithm</p>
+<h4 id="answer">answer</h4>
+<ol>
+<li>
+<p>three-address statements</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">B1       1)  i = 0
+
+B2       2)  if i &gt;= n goto(13)
+
+B3       3)  j = 0
+
+B4       4)  if j &gt;= n goto(11)
+
+B5       5） t1 = n * i
+         6)  t2 = t1 + j
+         7)  t3 = t2 * 8
+         8)  c[t3] = 0.0
+         9)  j = j + 1
+        10)  goto(4)
+
+B6      11)  i = i + 1
+        12)  goto(2)
+
+B7      13)  i = 0
+
+B8      14)  if i &gt;= n goto(40)
+
+B9      15)  j = 0
+
+B10     16)  if j &gt;= n goto(38)
+
+B11     17)  k = 0
+
+B12     18)  if k &gt;= n goto(36)
+
+B13     19)  t4 = n * i
+        20)  t5 = t4 + j
+        21)  t6 = t5 * 8
+        22)  t7 = c[t6]
+        23)  t8 = n * i
+        24)  t9 = t8 + k
+        25)  t10 = t9 * 8
+        26)  t11 = a[t10]
+        27)  t12 = n * k
+        28)  t13 = t12 + j
+        29)  t14 = t13 * 8
+        30)  t15 = b[t14]
+        31)  t16 = t11 * t15
+        32)  t17 = t7 + t16
+        33)  c[t6] = t17
+        34)  k = k + 1
+        35)  goto(18)
+
+B14     36)  j = j + 1
+        37)  goto(16)
+
+B15     38)  i = i + 1
+        39)  goto(14)
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>flow graph</p>
+<p><img src="https://f.cloud.github.com/assets/340282/1368058/d28ce9f8-397c-11e3-90ae-155b6f5f21fa.gif" alt="8 4 1-2"></p>
+</li>
+<li>
+<p>loops</p>
+<ul>
+<li>{B2, B3, B4, B6}</li>
+<li>{B4, B5}</li>
+<li>{B8, B9, B10, B15}</li>
+<li>{B10, B11, B12, B14}</li>
+<li>{B12, B13}</li>
+</ul>
+</li>
+</ol>
+<h3 id="842">8.4.2</h3>
+<p>Figure 8.11 is code to count the number of primes from 2 to n, using the sieve method on a suitably large array a. That is, a[i] is TRUE at the end only if there is no prime i^0.5 or less that evenly divides i. We initialize all a[i] to TRUE and then set a[j] to FALSE if we find a divisor of j.</p>
+<ol>
+<li>Translate the program into three-address statements of the type we have been using in this section. Assume integers require 4 bytes.</li>
+<li>Construct the flow graph for your code from (a).</li>
+<li>Identify the loops in your flow graph from (b).</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">for (i=2; i&lt;=n; i++)
+    a[i] = TRUE;
+count = 0;
+s = sqrt(n);
+for (i=2; i&lt;=s; i++)
+if (a[i]) 1* i has been found to be a prime *1 {
+    count++ ;
+    for (j=2*i; j&lt;=n; j = j+i)
+        a[j] = FALSE; 1* no multiple of i is a prime *1
+    }
+</code></pre></td></tr></table>
+</div>
+</div><p>Figure 8.11: Code to sieve for primes</p>
+<h4 id="answer-1">answer</h4>
+<ol>
+<li>
+<p>three-address statements</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">B1       1)  i = 2
+
+B2       2)  if i &gt; n goto(7)
+
+B3       3)  t1 = i * 4
+         4)  a[t1] = TRUE
+         5)  i = i + 1
+         6)  goto(2)
+
+B4       7)  count = 0
+         8)  s = sqrt(n)
+         9)  i = 2
+
+B5      10)  if i &gt; s goto(22)
+
+B6      11)  t2 = i * 4
+        12)  ifFalse a[t2] goto(20)
+
+B7      13)  count = count + 1
+        14)  j = 2 * i
+
+B8      15)  if j &gt; n goto(20)
+
+B9      16)  t3 = j * 4
+        17)  a[t3] = FALSE
+        18） j = j + i
+        19)  goto(15)
+
+B10     20)  i = i + 1
+        21)  goto(10)
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>flow graph</p>
+<p><img src="https://f.cloud.github.com/assets/340282/1368108/b06992fe-3981-11e3-9f51-24f223030901.gif" alt="8 4 2-2"></p>
+</li>
+<li>
+<p>loops</p>
+<ul>
+<li>{B2, B3}</li>
+<li>{B5, B6, B10}</li>
+<li>{B5, B6, B7, B8, B10}</li>
+<li>{B8, B9}</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="note">Note</h3>
+<h4 id="1-a-demo-for-algorithm-87-determining-the-liveness-and-next-use-information-foreach-statement-in-a-basic-block">1. A demo for algorithm 8.7: Determining the liveness and next-use information foreach statement in a basic block.</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span><span class="lnt">73
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">init:
+
+three-address statements                 symbol table
+
+                                         symbol  live   nextuse
+    i)  a = b + c                       [a,      true,  null]
+    j)  t = a + b                       [b,      true,  null]
+                                        [c,      true,  null]
+                                        [t,      true,  null]
+
+step1:
+Attach to statement j the information currently found in the symbol table
+
+                                         symbol  live   nextuse
+    i)  a = b + c                       [a,      true,  null]
+    j)  t = a + b  [t, true, null]      [b,      true,  null]
+                   [a, true, null]      [c,      true,  null]
+                   [b, true, null]      [t,      true,  null]
+
+step2:
+In the symbol table, set x.live = false and
+                         x.nextuse = null
+
+                                         symbol  live   nextuse
+    i)  a = b + c                       [a,      true,  null]
+    j)  t = a + b  [t, true, null]      [b,      true,  null]
+                   [a, true, null]      [c,      true,  null]
+                   [b, true, null]      [t,      false, null]
+
+step3:
+In the symbol table, set a.live = true, b.live = true and
+                         a.nextuse = j, b.nextuse = j
+
+                                         symbol  live   nextuse
+    i)  a = b + c                       [a,      true,  j   ]
+    j)  t = a + b  [t, true, null]      [b,      true,  j   ]
+                   [a, true, null]      [c,      true,  null]
+                   [b, true, null]      [t,      false, null]
+
+step4:
+
+
+                                         symbol  live   nextuse
+    i)  a = b + c  [a, true, j   ]      [a,      true,  j   ]
+                   [b, true, j   ]      [b,      true,  j   ]
+                   [c, true, null]      [c,      true,  null]
+                                        [t,      false, null]
+    j)  t = a + b  [t, true, null]
+                   [a, true, null]
+                   [b, true, null]
+
+step5:
+
+                                         symbol  live   nextuse
+    i)  a = b + c  [a, true, j   ]      [a,      false, null]
+                   [b, true, j   ]      [b,      true,  j   ]
+                   [c, true, null]      [c,      true,  null]
+                                        [t,      false, null]
+    j)  t = a + b  [t, true, null]
+                   [a, true, null]
+                   [b, true, null]
+
+step6:
+
+                                         symbol  live   nextuse
+    i)  a = b + c  [a, true, j   ]      [a,      false, null]
+                   [b, true, j   ]      [b,      true,  i   ]
+                   [c, true, null]      [c,      true,  i   ]
+                                        [t,      false, null]
+    j)  t = a + b  [t, true, null]
+                   [a, true, null]
+                   [b, true, null]
+
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="2-three-ways-to-generate-code-for-fori--0-i--n--i-statement">2. Three ways to generate code for &ldquo;for(i = 0; i &lt; n ; i++)&rdquo; statement</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"> 1) i = 0
+ 2) if i &gt;= n goto(9)
+ 3)
+    ...
+ 7) i = i + 1
+ 8) if i &lt; n goto(3)
+ 9)
+
+
+ 1) i = 0
+ 2) goto(8)
+ 3)
+    ...
+ 7) i = i + 1
+ 8) if i &lt; n goto(3)
+ 9)
+
+
+ 1) i= 0
+ 2) if i &gt;= n goto(9)
+    ...
+ 7) i = i + 1
+ 8) goto(2)
+ 9)
+</code></pre></td></tr></table>
+</div>
+</div><p>更多可参考 RednaxelaFX 的 <a href="http://rednaxelafx.iteye.com/blog/1961217">对C语义的for循环的基本代码生成模式</a></p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Wikipedia</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2021-08-30
+        
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">License</span>
+    <span class="item-content"><a rel="license noopener" href="https://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License" target="_blank">Creative Commons Attribution-ShareAlike License</a></span>
+  </p>
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/preview/">preview</a>
+          <a href="/tags/%E4%B8%AD%E6%96%87/">中文</a>
+          <a href="/tags/tag-1/">tag-1</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/ch08/8.3/8.3/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">8.3</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/post/hidden-post/">
+            <span class="next-text nav-default">This is a hidden post.</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:your@email.com" class="iconfont icon-email" title="email"></a>
+      <a href="http://localhost:1313" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="http://localhost:1313" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="http://localhost:1313" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="http://localhost:1313" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://localhost:1313" class="iconfont icon-google" title="google"></a>
+      <a href="http://localhost:1313" class="iconfont icon-github" title="github"></a>
+      <a href="http://localhost:1313" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="http://localhost:1313" class="iconfont icon-zhihu" title="zhihu"></a>
+      <a href="http://localhost:1313" class="iconfont icon-douban" title="douban"></a>
+      <a href="http://localhost:1313" class="iconfont icon-pocket" title="pocket"></a>
+      <a href="http://localhost:1313" class="iconfont icon-tumblr" title="tumblr"></a>
+      <a href="http://localhost:1313" class="iconfont icon-instagram" title="instagram"></a>
+      <a href="http://localhost:1313" class="iconfont icon-gitlab" title="gitlab"></a>
+      <a href="http://localhost:1313" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="http://localhost:1313/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>olOwOlo</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

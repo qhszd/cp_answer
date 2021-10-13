@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>3.5 - Even - A super concise theme for Hugo</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Wikipedia" /><meta name="description" content="3.5 节的练习 3.5.1 描述如何对图 3-23 中的 Lex 程序做出如下修改： 增加关键字 while 将比较运算符转换成 C 语言中的同类运算符 允许把下划线当做一个附加的字母 ！ 增加一个" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.88.1 with theme even" />
+
+
+<link rel="canonical" href="http://localhost:1313/post/ch03/3.5/3.5/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="3.5" />
+<meta property="og:description" content="3.5 节的练习 3.5.1 描述如何对图 3-23 中的 Lex 程序做出如下修改： 增加关键字 while 将比较运算符转换成 C 语言中的同类运算符 允许把下划线当做一个附加的字母 ！ 增加一个" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/post/ch03/3.5/3.5/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-08-30T01:37:56+08:00" />
+<meta property="article:modified_time" content="2021-08-30T01:37:56+08:00" />
+
+<meta itemprop="name" content="3.5">
+<meta itemprop="description" content="3.5 节的练习 3.5.1 描述如何对图 3-23 中的 Lex 程序做出如下修改： 增加关键字 while 将比较运算符转换成 C 语言中的同类运算符 允许把下划线当做一个附加的字母 ！ 增加一个"><meta itemprop="datePublished" content="2021-08-30T01:37:56+08:00" />
+<meta itemprop="dateModified" content="2021-08-30T01:37:56+08:00" />
+<meta itemprop="wordCount" content="621">
+<meta itemprop="keywords" content="preview,中文,tag-1," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="3.5"/>
+<meta name="twitter:description" content="3.5 节的练习 3.5.1 描述如何对图 3-23 中的 Lex 程序做出如下修改： 增加关键字 while 将比较运算符转换成 C 语言中的同类运算符 允许把下划线当做一个附加的字母 ！ 增加一个"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Even</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Even</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">3.5</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2021-08-30 </span>
+        <div class="post-category">
+            <a href="/categories/%E4%B8%AD%E6%96%87/"> 中文 </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#35-节的练习">3.5 节的练习</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#351">3.5.1</a></li>
+            <li><a href="#352">3.5.2</a></li>
+            <li><a href="#353">3.5.3</a></li>
+            <li><a href="#354-">3.5.4 ！</a></li>
+            <li><a href="#355-">3.5.5 ！</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h1 id="35-节的练习">3.5 节的练习</h1>
+<h3 id="351">3.5.1</h3>
+<p>描述如何对图 3-23 中的 Lex 程序做出如下修改：</p>
+<ol>
+<li>增加关键字 while</li>
+<li>将比较运算符转换成 C 语言中的同类运算符</li>
+<li>允许把下划线当做一个附加的字母</li>
+<li>！ 增加一个新的具有词法单元 STRING 的模式。该模式有一个双引号、任意字符创以及结尾处的双引号组成。但是，如果一个双引号出现在上述串中，那么它的前面必须加上一个反斜杠进行转移，因此，在该字符串中的反斜杠将用双反斜杠表示。这个词法单元的词法值是去掉了双引号的字符串，并且其中用于转移的反斜杠已经被删除。识别得到的字符串将被存放到一个字符串表中。</li>
+</ol>
+<h3 id="352">3.5.2</h3>
+<p>编写一个 Lex 程序。该程序拷贝一个文件，并将文件中的每个非空的空白序列替换成单个空格。</p>
+<h3 id="353">3.5.3</h3>
+<p>编写一个 Lex 程序。该程序拷贝一个 C 程序，并将程序中关键字 float 的每个实例替换成 double。</p>
+<h3 id="354-">3.5.4 ！</h3>
+<p>编写一个 Lex 程序。该程序把一个文件改变成 Pig Latin 文。明确的讲，假设该文件是一个用空白字符分开的单词序列，每当你遇到一个单词时：</p>
+<ol>
+<li>如果第一个字母是辅音字母，则将他移到单词的结尾，并加上 ay。</li>
+<li>如果第一个字母是元音字母，则只在单词的结尾加上 ay。</li>
+</ol>
+<p>所有非字母的字符不加处理直接拷贝到输出。</p>
+<h3 id="355-">3.5.5 ！</h3>
+<p>在 SQL 中，关键字和标识符都是大小写不敏感的。编写一个 Lex 程序，该程序识别（大小写字母任意组合的） 关键字 select、from 和 where 以及词法单元 id。考虑到这个练习的目的，你可以把 id 堪称是任意以一个字母开头、由字母和数字组成的字符串。你不必将标识符放到一个符号表中，但需要之处这里的 install 函数与图 3-23 中用于描述大小写敏感标识符的函数有何不同。</p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Wikipedia</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2021-08-30
+        
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">License</span>
+    <span class="item-content"><a rel="license noopener" href="https://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License" target="_blank">Creative Commons Attribution-ShareAlike License</a></span>
+  </p>
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/preview/">preview</a>
+          <a href="/tags/%E4%B8%AD%E6%96%87/">中文</a>
+          <a href="/tags/tag-1/">tag-1</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/ch03/3.4/3.4/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">3.4</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/post/ch03/3.6/3.6/">
+            <span class="next-text nav-default">3.6</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:your@email.com" class="iconfont icon-email" title="email"></a>
+      <a href="http://localhost:1313" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="http://localhost:1313" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="http://localhost:1313" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="http://localhost:1313" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://localhost:1313" class="iconfont icon-google" title="google"></a>
+      <a href="http://localhost:1313" class="iconfont icon-github" title="github"></a>
+      <a href="http://localhost:1313" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="http://localhost:1313" class="iconfont icon-zhihu" title="zhihu"></a>
+      <a href="http://localhost:1313" class="iconfont icon-douban" title="douban"></a>
+      <a href="http://localhost:1313" class="iconfont icon-pocket" title="pocket"></a>
+      <a href="http://localhost:1313" class="iconfont icon-tumblr" title="tumblr"></a>
+      <a href="http://localhost:1313" class="iconfont icon-instagram" title="instagram"></a>
+      <a href="http://localhost:1313" class="iconfont icon-gitlab" title="gitlab"></a>
+      <a href="http://localhost:1313" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="http://localhost:1313/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>olOwOlo</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

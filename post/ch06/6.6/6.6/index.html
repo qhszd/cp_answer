@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>6.6 - Even - A super concise theme for Hugo</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Wikipedia" /><meta name="description" content="6.6 节的练习 6.6.1 在图 6-36 的语法制导定义中添加处理下列控制流构造的规则： 一个 repeat 语句：repeat S while B ！一个 for 循环语句：for (S1; B; S2) S3 解答 Production Syntax Rule S -&amp;gt;" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.88.1 with theme even" />
+
+
+<link rel="canonical" href="http://localhost:1313/post/ch06/6.6/6.6/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="6.6" />
+<meta property="og:description" content="6.6 节的练习 6.6.1 在图 6-36 的语法制导定义中添加处理下列控制流构造的规则： 一个 repeat 语句：repeat S while B ！一个 for 循环语句：for (S1; B; S2) S3 解答 Production Syntax Rule S -&gt;" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/post/ch06/6.6/6.6/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-08-30T01:37:56+08:00" />
+<meta property="article:modified_time" content="2021-08-30T01:37:56+08:00" />
+
+<meta itemprop="name" content="6.6">
+<meta itemprop="description" content="6.6 节的练习 6.6.1 在图 6-36 的语法制导定义中添加处理下列控制流构造的规则： 一个 repeat 语句：repeat S while B ！一个 for 循环语句：for (S1; B; S2) S3 解答 Production Syntax Rule S -&gt;"><meta itemprop="datePublished" content="2021-08-30T01:37:56+08:00" />
+<meta itemprop="dateModified" content="2021-08-30T01:37:56+08:00" />
+<meta itemprop="wordCount" content="1045">
+<meta itemprop="keywords" content="preview,中文,tag-1," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="6.6"/>
+<meta name="twitter:description" content="6.6 节的练习 6.6.1 在图 6-36 的语法制导定义中添加处理下列控制流构造的规则： 一个 repeat 语句：repeat S while B ！一个 for 循环语句：for (S1; B; S2) S3 解答 Production Syntax Rule S -&gt;"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Even</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Even</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">6.6</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2021-08-30 </span>
+        <div class="post-category">
+            <a href="/categories/%E4%B8%AD%E6%96%87/"> 中文 </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#66-节的练习">6.6 节的练习</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#661">6.6.1</a></li>
+            <li><a href="#662">6.6.2</a></li>
+            <li><a href="#663">6.6.3！</a></li>
+            <li><a href="#664">6.6.4</a></li>
+            <li><a href="#665">6.6.5</a></li>
+            <li><a href="#666">6.6.6</a></li>
+            <li><a href="#667">6.6.7！</a></li>
+            <li><a href="#668">6.6.8！！</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h1 id="66-节的练习">6.6 节的练习</h1>
+<h3 id="661">6.6.1</h3>
+<p>在图 6-36 的语法制导定义中添加处理下列控制流构造的规则：</p>
+<ol>
+<li>一个 repeat 语句：repeat S while B</li>
+<li>！一个 for 循环语句：for (S1; B; S2) S3</li>
+</ol>
+<h4 id="解答">解答</h4>
+<pre><code>Production                  Syntax Rule
+
+S -&gt; repeat S1 while B      S1.next = newlabel()
+                            B.true = newlabel()
+                            B.false = S.next
+                            S.code = label(B.true) || S1.code
+                                || label(S1.next) || B.code
+                                
+S -&gt; for (S1; B; S2) S3     S1.next = newlabel()
+                            B.true = newlabel()
+                            B.false = S.next
+                            S2.next = S1.next
+                            S3.next = newlabel()
+                            S.code = S1.code
+                                || lable(S1.next) || B.code
+                                || lable(B.true) || S3.code
+                                || label(S3.next) || S2.code
+                                || gen('goto', S1.next)
+</code></pre>
+<h3 id="662">6.6.2</h3>
+<p>现代计算机试图在同一个时刻执行多条指令，其中包括各种分支指令。因此，当计算机投机性地预先执行某个分支，但实际控制流却进入另一个分支时，付出的代价是很大的。因此我们希望尽可能地减少分支数量。请注意，在图 6-35c 中 while 循环语句的实现中，每个迭代有两个分支：一个是从条件 B 进入到循环体中，另一个分支跳转回 B 的代码。基于尽量减少分支的考虑，我们通常更倾向于将 while(B) S 当作 if(B) {repeat S until !(B)} 来实现。给出这种翻译方法的代码布局，并修改图 6-36 中 while 循环语句的规则。</p>
+<h4 id="解答-1">解答</h4>
+<pre><code>Production               Syntax Rule
+
+S -&gt; if(B) {             B.true = newlabel()    
+        repeat S1        B.false = S.next            
+        until !(B)       S1.next = newlabel()
+     }                   S.code = B.code
+                             || label(B.true) || S1.code
+                             || label(S1.next) || B.code
+</code></pre>
+<h3 id="663">6.6.3！</h3>
+<p>假设 C 中存在一个异或运算。按照图 6-37 的风格写出这个运算符的代码生成规则。</p>
+<h4 id="解答-2">解答</h4>
+<p>B1 ^ B2 等价于 !B1 &amp;&amp; B2 || B1 &amp;&amp; !B2 (运算符优先级 ! &gt; &amp;&amp; &gt; ||)</p>
+<pre><code>Production      Syntax Rule
+
+B -&gt; B1 ^ B2    B1.true = newlabel()
+                B1.false = newlabel()
+                
+                B2.true = B.true
+                B2.false = B1.true
+                
+                b3 = newboolean()
+                b3.code = B1.code
+                b3.true = newlabel()
+                b3.false = B.false
+                
+                b4 = newboolean()
+                b4.code = B2.code
+                b4.true = B.false
+                b4.false = B.true
+                
+                S.code = B1.code
+                    || label(B1.false) || B2.code
+                    || label(B1.true) || b3.code
+                    || label(b3.true) || b4.code
+</code></pre>
+<h3 id="664">6.6.4</h3>
+<p>使用 6.6.5 节中介绍的避免 goto 语句的翻译方案，翻译下列表达式：</p>
+<ol>
+<li>if (a==b &amp;&amp; c==d || e==f) x == 1</li>
+<li>if (a==b || c==d || e==f) x == 1</li>
+<li>if (a==b || c==d &amp;&amp; e==f) x == 1</li>
+</ol>
+<h4 id="解答-3">解答</h4>
+<ol>
+<li>
+<p>if (a==b &amp;&amp; c==d || e==f) x == 1</p>
+<pre><code>     ifFalse a==b goto L3 
+     if c==d goto L2
+ L3: ifFalse e==f goto L1
+ L2: x == 1
+ L1:
+</code></pre>
+</li>
+<li>
+<p>if (a==b || c==d || e==f) x == 1</p>
+<pre><code>     if a==b goto L2
+     if c==d goto L2
+     ifFalse e==f goto L1
+ L2: x==1
+ L1:
+</code></pre>
+</li>
+<li>
+<p>if (a==b || c==d &amp;&amp; e==f) x == 1</p>
+<pre><code>     if a==b goto L2
+     ifFalse c==d goto L1
+     ifFalse e==f goto L1
+ L2: x==1
+ L1:
+</code></pre>
+</li>
+</ol>
+<h3 id="665">6.6.5</h3>
+<p>基于图 6-36 和图 6-37 中给出的语法制导定义，给出一个翻译方案。</p>
+<h3 id="666">6.6.6</h3>
+<p>使用类似于图 6-39 和图 6-40 中的规则，修改图 6-36 和图 6-37 的语义规则，使之允许控制流穿越。</p>
+<h4 id="解答-4">解答</h4>
+<p>仅补充完毕书中未解答部分</p>
+<pre><code>Production              Syntax Rule
+                    
+S -&gt; if(B) S1 else S2   B.true = fall
+                        B.false = newlabel()
+                        S1.next = S.next
+                        S2.next = S.next
+                        S.code = B.code 
+                            || S1.code
+                            || gen('goto' S1.next)
+                            || label(B.false) || S2.code
+                            
+S -&gt; while(B) S1        begin = newlabel()
+                        B.true = fall
+                        B.false = S.next
+                        S1.next = begin
+                        S.code = label(begin) || B.code
+                            || S1.code
+                            || gen('goto' begin)
+                            
+S -&gt; S1 S2              S1.next = fall
+                        S2.next = S.next
+                        S.code = S1.code || S2.code
+                        
+B -&gt; B1 &amp;&amp; B2           B1.true = fall
+                        B1.false = if B.false == fall
+                                   then newlabel()
+                                   else B.false
+                        B2.true = B.true
+                        B2.false = B.false
+                        B.code = if B.false == fall
+                                 then B1.code || B2.code || label(B1.false)
+                                 else B1.code || B2.code
+</code></pre>
+<h3 id="667">6.6.7！</h3>
+<p>练习 6.6.6 中的语义规则产生了一些不必要的标号。修改图 6-36 中语句的规则，使之只创建必要的标号。你可以使用特殊符号 deferred 来表示还没有创建的一个标号。你的语义规则必须能生成类似于例 6.21 的代码。</p>
+<h3 id="668">6.6.8！！</h3>
+<p>6.6.5 节中讨论了如何使用穿越代码来尽可能减少生成的中间代码中跳转指令的数据。然而，它并没有充分考虑将一个条件替换为它的补的方法，例如将 <code>if a &lt; b goto L1; goto L2</code> 替换成 <code>ifFalse a &gt;= b goto L2; goto L1</code>。给出语法制导定义，它在需要时可以利用这种替换方法。</p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Wikipedia</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2021-08-30
+        
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">License</span>
+    <span class="item-content"><a rel="license noopener" href="https://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License" target="_blank">Creative Commons Attribution-ShareAlike License</a></span>
+  </p>
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/preview/">preview</a>
+          <a href="/tags/%E4%B8%AD%E6%96%87/">中文</a>
+          <a href="/tags/tag-1/">tag-1</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/ch06/6.5/6.5/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">6.5</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/post/ch06/6.7/6.7/">
+            <span class="next-text nav-default">6.7</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:your@email.com" class="iconfont icon-email" title="email"></a>
+      <a href="http://localhost:1313" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="http://localhost:1313" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="http://localhost:1313" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="http://localhost:1313" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://localhost:1313" class="iconfont icon-google" title="google"></a>
+      <a href="http://localhost:1313" class="iconfont icon-github" title="github"></a>
+      <a href="http://localhost:1313" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="http://localhost:1313" class="iconfont icon-zhihu" title="zhihu"></a>
+      <a href="http://localhost:1313" class="iconfont icon-douban" title="douban"></a>
+      <a href="http://localhost:1313" class="iconfont icon-pocket" title="pocket"></a>
+      <a href="http://localhost:1313" class="iconfont icon-tumblr" title="tumblr"></a>
+      <a href="http://localhost:1313" class="iconfont icon-instagram" title="instagram"></a>
+      <a href="http://localhost:1313" class="iconfont icon-gitlab" title="gitlab"></a>
+      <a href="http://localhost:1313" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="http://localhost:1313/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>olOwOlo</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

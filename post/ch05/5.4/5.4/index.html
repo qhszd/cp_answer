@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>5.4 - Even - A super concise theme for Hugo</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Wikipedia" /><meta name="description" content="5.4 节的练习 5.4.1 我们在 5.4.2 节中提到可能根据语法分析栈中的 LR 状态来推导出这个状态表示了什么文法符号。我们如何推导这个信息？ 解答 见算法 4.44 5.4.2 改写下面的 SDT:" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.88.1 with theme even" />
+
+
+<link rel="canonical" href="http://localhost:1313/post/ch05/5.4/5.4/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="5.4" />
+<meta property="og:description" content="5.4 节的练习 5.4.1 我们在 5.4.2 节中提到可能根据语法分析栈中的 LR 状态来推导出这个状态表示了什么文法符号。我们如何推导这个信息？ 解答 见算法 4.44 5.4.2 改写下面的 SDT:" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/post/ch05/5.4/5.4/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-08-30T01:37:56+08:00" />
+<meta property="article:modified_time" content="2021-08-30T01:37:56+08:00" />
+
+<meta itemprop="name" content="5.4">
+<meta itemprop="description" content="5.4 节的练习 5.4.1 我们在 5.4.2 节中提到可能根据语法分析栈中的 LR 状态来推导出这个状态表示了什么文法符号。我们如何推导这个信息？ 解答 见算法 4.44 5.4.2 改写下面的 SDT:"><meta itemprop="datePublished" content="2021-08-30T01:37:56+08:00" />
+<meta itemprop="dateModified" content="2021-08-30T01:37:56+08:00" />
+<meta itemprop="wordCount" content="987">
+<meta itemprop="keywords" content="preview,中文,tag-1," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="5.4"/>
+<meta name="twitter:description" content="5.4 节的练习 5.4.1 我们在 5.4.2 节中提到可能根据语法分析栈中的 LR 状态来推导出这个状态表示了什么文法符号。我们如何推导这个信息？ 解答 见算法 4.44 5.4.2 改写下面的 SDT:"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Even</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Even</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">5.4</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2021-08-30 </span>
+        <div class="post-category">
+            <a href="/categories/%E4%B8%AD%E6%96%87/"> 中文 </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#54-节的练习">5.4 节的练习</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#541">5.4.1</a></li>
+            <li><a href="#542">5.4.2</a></li>
+            <li><a href="#543-">5.4.3 ！</a></li>
+            <li><a href="#544-">5.4.4 ！</a></li>
+            <li><a href="#545">5.4.5</a></li>
+            <li><a href="#546">5.4.6</a></li>
+            <li><a href="#547">5.4.7</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h1 id="54-节的练习">5.4 节的练习</h1>
+<h3 id="541">5.4.1</h3>
+<p>我们在 5.4.2 节中提到可能根据语法分析栈中的 LR 状态来推导出这个状态表示了什么文法符号。我们如何推导这个信息？</p>
+<h4 id="解答">解答</h4>
+<p>见算法 4.44</p>
+<h3 id="542">5.4.2</h3>
+<p>改写下面的 SDT:</p>
+<pre><code>A -&gt; A {a} B | A B {b} | 0
+B -&gt; B {c} A | B A {d} | 1
+</code></pre>
+<p>使得基础文法变成非左递归的。</p>
+<h3 id="543-">5.4.3 ！</h3>
+<p>下面的 SDT 计算了一个由 0 和 1 组成的串的值。它把输入的符号串当做正二进制数来解释。</p>
+<pre><code>B -&gt; B_1 0 {B.val = 2 * B_1.val}
+   | B_1 1 {B.val = 2 * B_1.val + 1}
+   | 1 {B.val = 1}
+</code></pre>
+<p>改写这个 SDT，使得基础文法不再是左递归的，但仍然可以计算出整个输入串的相同的 B.val 的值。</p>
+<h4 id="解答-1">解答</h4>
+<p>提取左公因子</p>
+<pre><code>B -&gt; B_1 digit {B.val = 2 * B_1.val + digit.val}
+   | 1 {B.val = 1}
+digit -&gt; 0 {digit.val = 0} 
+       | 1 {digit.val = 1}
+</code></pre>
+<p>在形如 <code>A = A a | b</code> 的左递归产生式中， a 为 <code>digit {B.val = 2 * B_1.val + digit.val}</code>， b 为 <code>1</code></p>
+<p>消除左递归后得</p>
+<pre><code>B -&gt; 1 {A.i = 1} A
+A -&gt; digit {A_1.i = 2 * A.i + digit.val} A_1 {A.val = A_1.val}
+   | ε {A.val = A.i}
+digit -&gt; 0 {digit.val = 0} 
+       | 1 {digit.val = 1}
+</code></pre>
+<h3 id="544-">5.4.4 ！</h3>
+<p>为下面的产生式写出一个和例 5.19 类似的 L 属性 SDD。这里的每个产生式表示一个常见的 C 语言那样的控制流结构。你可能需要生成一个三地址语句来跳转到某个标号 L，此时你可以生成语句 goto L。</p>
+<ol>
+<li>S -&gt; if ( C ) S_1 else S_2</li>
+<li>S -&gt; do S_1 while ( C )</li>
+<li>S -&gt; &lsquo;{&rsquo; L &lsquo;}'; L -&gt; L S | ε</li>
+</ol>
+<p>请注意，列表中的任何语句都可能包含一条从它的内部跳转到下一个语句的跳转指令，因此简单地为各个语句按顺序生成代码是不够的。</p>
+<h4 id="解答-2">解答</h4>
+<ol>
+<li>
+<p>S -&gt; if ( C ) S_1 else S_2</p>
+<pre><code> L_1 = new()
+ C.false = L_1  
+ S_1.next = S.next
+ S.code = C.code || S_1.code || label || L_1 || S_2.code                              
+</code></pre>
+</li>
+<li>
+<p>S -&gt; do S_1 while ( C )</p>
+<pre><code>L_1 = new()
+C.true = L_1
+S.code = label || L_1 || S_1.code || C.code
+</code></pre>
+</li>
+</ol>
+<h3 id="545">5.4.5</h3>
+<p>按照例 5.19 的方法，把在练习 5.4.4 中得到的各个 SDD 转换成一个 SDT。</p>
+<h4 id="解答-3">解答</h4>
+<ol>
+<li>
+<p>S -&gt; if ( C ) S_1 else S_2</p>
+<pre><code> S -&gt; if (     {new L_1; C.false = L_1}   
+      C )      {S_1.next = S.next}
+      S_1 else
+      S_2      {S.code = C.code || S_1.code || label || L_1 || S_2.code}
+</code></pre>
+</li>
+<li>
+<p>S -&gt; do S_1 while ( C )</p>
+<pre><code>S -&gt; do           {new L_1} 
+     S_1 while (  {C.true = L_1}
+     C )          {S.code = label || L_1 || S_1.code || C.code}
+</code></pre>
+</li>
+</ol>
+<h3 id="546">5.4.6</h3>
+<p>修改图 5.25 中的 SDD，使它包含一个综合属性 B.le，即一个方框的长度。两个方框并列后得到的方框的长度是这两个方框的长度和。然后把你的新规则加入到图 5.26 中 SDT 的合适位置上。</p>
+<h3 id="547">5.4.7</h3>
+<p>修改图 5.25 中的 SDD，使它包含上标，用方框之间的运算符 sup 表示。如果方框 B_2 是方框 B_1 的一个上标，那么将 B_2 的基线放在 B_1 的基线上方，两条基线的距离是 0.6 乘以 B_1 的大小。把新的产生式和规则加入到图 5.26 的 SDT 中去。</p>
+<h4 id="546-和-547-的解答">5.4.6 和 5.4.7 的解答</h4>
+<pre><code>1) S -&gt; B               B.ps = 10
+                        B.wd = 
+                        
+2) S -&gt; B_1 B_2         B_1.ps = B.ps
+                        B_2.ps = B.ps
+                        B.wd = B_1.wd + B_2.wd
+                        B.ht = max(B_1.ht, B_2.ht)
+                        B.dp = max(B_1.dp, B_2.dp)
+
+3) B -&gt; B_1 sub B_2     B_1.ps = B.ps
+                        B_2.ps = 0.7 * B.ps
+                        B.wd = B_1.wd + B_2.wd
+                        B.ht = max(B_1.ht, B_2.ht - 0.25 * B.ps)
+                        B.dp = max(B_1.dp, B_2.dp + 0.25 * B.ps)
+
+4) B -&gt; B_1 sup B_2     B_1.ps = B.ps
+                        B_2.ps = 0.6 * B.ps
+                        B.wd = B_1.wd + B_2.wd
+                        B.ht = max(B_1.ht, B_2.ht + 0.6 * B.ps)
+                        B.dp = max(B_1.dp, B_2.dp - 0.6 * B.ps)    
+
+5) B -&gt; ( B_1 )         B_1.ps = B.ps
+                        B.wd = B_1.wd
+                        B.ht = B_1.ht
+                        B.dp = B_1.dp
+
+6) B -&gt; text            B.wd = getWd(B.ps, text.lexval)
+                        B.ht = getHt(B.ps, text.lexval)
+                        B.dp = getDp(B.ps, text.lexval)
+</code></pre>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Wikipedia</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2021-08-30
+        
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">License</span>
+    <span class="item-content"><a rel="license noopener" href="https://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License" target="_blank">Creative Commons Attribution-ShareAlike License</a></span>
+  </p>
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/preview/">preview</a>
+          <a href="/tags/%E4%B8%AD%E6%96%87/">中文</a>
+          <a href="/tags/tag-1/">tag-1</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/ch05/5.3/5.3/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">5.3</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/post/ch05/5.5/5.5/">
+            <span class="next-text nav-default">5.5</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:your@email.com" class="iconfont icon-email" title="email"></a>
+      <a href="http://localhost:1313" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="http://localhost:1313" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="http://localhost:1313" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="http://localhost:1313" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://localhost:1313" class="iconfont icon-google" title="google"></a>
+      <a href="http://localhost:1313" class="iconfont icon-github" title="github"></a>
+      <a href="http://localhost:1313" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="http://localhost:1313" class="iconfont icon-zhihu" title="zhihu"></a>
+      <a href="http://localhost:1313" class="iconfont icon-douban" title="douban"></a>
+      <a href="http://localhost:1313" class="iconfont icon-pocket" title="pocket"></a>
+      <a href="http://localhost:1313" class="iconfont icon-tumblr" title="tumblr"></a>
+      <a href="http://localhost:1313" class="iconfont icon-instagram" title="instagram"></a>
+      <a href="http://localhost:1313" class="iconfont icon-gitlab" title="gitlab"></a>
+      <a href="http://localhost:1313" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="http://localhost:1313/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>olOwOlo</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

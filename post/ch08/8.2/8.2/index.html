@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>8.2 - Even - A super concise theme for Hugo</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Wikipedia" /><meta name="description" content="Exercises for Section 8.2 8.2.1 Generate code for the following three-address statements assuming all variables are stored in memory locations. x = 1 x = a x = a &#43; 1 x = a &#43; b The two statements x = b * c y = a &#43; x answer 1. LD R1, #1 ST x, R1 2. LD R1, a ST x, R1 3. LD R1, a ADD R1," /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.88.1 with theme even" />
+
+
+<link rel="canonical" href="http://localhost:1313/post/ch08/8.2/8.2/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="8.2" />
+<meta property="og:description" content="Exercises for Section 8.2 8.2.1 Generate code for the following three-address statements assuming all variables are stored in memory locations. x = 1 x = a x = a &#43; 1 x = a &#43; b The two statements x = b * c y = a &#43; x answer 1. LD R1, #1 ST x, R1 2. LD R1, a ST x, R1 3. LD R1, a ADD R1," />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/post/ch08/8.2/8.2/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-08-30T01:37:56+08:00" />
+<meta property="article:modified_time" content="2021-08-30T01:37:56+08:00" />
+
+<meta itemprop="name" content="8.2">
+<meta itemprop="description" content="Exercises for Section 8.2 8.2.1 Generate code for the following three-address statements assuming all variables are stored in memory locations. x = 1 x = a x = a &#43; 1 x = a &#43; b The two statements x = b * c y = a &#43; x answer 1. LD R1, #1 ST x, R1 2. LD R1, a ST x, R1 3. LD R1, a ADD R1,"><meta itemprop="datePublished" content="2021-08-30T01:37:56+08:00" />
+<meta itemprop="dateModified" content="2021-08-30T01:37:56+08:00" />
+<meta itemprop="wordCount" content="1344">
+<meta itemprop="keywords" content="preview,中文,tag-1," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="8.2"/>
+<meta name="twitter:description" content="Exercises for Section 8.2 8.2.1 Generate code for the following three-address statements assuming all variables are stored in memory locations. x = 1 x = a x = a &#43; 1 x = a &#43; b The two statements x = b * c y = a &#43; x answer 1. LD R1, #1 ST x, R1 2. LD R1, a ST x, R1 3. LD R1, a ADD R1,"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Even</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Even</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">8.2</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2021-08-30 </span>
+        <div class="post-category">
+            <a href="/categories/%E4%B8%AD%E6%96%87/"> 中文 </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#exercises-for-section-82">Exercises for Section 8.2</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#821">8.2.1</a></li>
+            <li><a href="#822">8.2.2</a></li>
+            <li><a href="#823">8.2.3</a></li>
+            <li><a href="#824">8.2.4</a></li>
+            <li><a href="#825">8.2.5</a></li>
+            <li><a href="#826">8.2.6</a></li>
+            <li><a href="#note">Note</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h1 id="exercises-for-section-82">Exercises for Section 8.2</h1>
+<h3 id="821">8.2.1</h3>
+<p>Generate code for the following three-address statements assuming all variables are stored in memory locations.</p>
+<ol>
+<li>x = 1</li>
+<li>x = a</li>
+<li>x = a + 1</li>
+<li>x = a + b</li>
+<li>The two statements
+<ul>
+<li>x = b * c</li>
+<li>y = a + x</li>
+</ul>
+</li>
+</ol>
+<h4 id="answer">answer</h4>
+<pre><code>1.  LD R1, #1
+    ST x, R1
+
+2.  LD R1, a
+    ST x, R1
+
+3.  LD R1, a
+    ADD R1, R1, #1
+    ST x, R1
+
+4.  LD R1, a
+    LD R2, b
+    ADD R1, R1, R2
+    ST x, R1
+
+5.  LD R1, b
+    LD R2, c
+    MUL R1, R1, R2
+    LD R3, a
+    ADD R3, R3, R1
+    ST y, R3
+</code></pre>
+<p>Note：第 5 小题，可以在生成的汇编码第三行后插入 <code>ST x, R1</code> 和 <code>LD R1, x</code> 两句，这两句属于冗余代码（redundant store-load）。使用简易代码生成策略很容易生成这种冗余代码，慢是慢一些但是也是正确的，有专门处理这种问题的优化（redundant store-load elimination），所以生不生成在这题的答案里感觉都行。</p>
+<h3 id="822">8.2.2</h3>
+<p>Generate code for the following three-address statements assuming a and b are arrays whose elements are 4-byte values.</p>
+<ol>
+<li>
+<p>The four-statement sequence</p>
+<pre><code> x = a[i]
+ y = b[j]
+ a[i] = y
+ b[j] = x
+</code></pre>
+</li>
+<li>
+<p>The three-statement sequence</p>
+<pre><code> x = a[i]
+ y = b[i]
+ z = x * y
+</code></pre>
+</li>
+<li>
+<p>The three-statement sequence</p>
+<pre><code> x = a[i]
+ y = b[x]
+ a[i] = y
+</code></pre>
+</li>
+</ol>
+<h4 id="answer-1">answer</h4>
+<pre><code>1.  LD R1, i
+    MUL R1, R1, #4
+    LD R2, a(R1)
+    LD R3, j
+    MUL R3, R3, #4
+    LD R4, b(R3)
+    ST a(R1), R2
+    ST b(R3), R4
+
+2.  LD R1, i
+    MUL R1, R1, #4
+    LD R2, a(R1)
+    LD R1, b(R1)
+    MUL R1, R2, R1
+    ST z, R1
+
+3.  LD R1, i
+    MUL R1, R1, #4
+    LD R2, a(R1)
+    MUL R2, R2, #4
+    LD R2, b(R2)
+    ST a(R1), R2
+</code></pre>
+<h3 id="823">8.2.3</h3>
+<p>Generate code for the following three-address sequence assuming that p and q are in memory locations:</p>
+<pre><code>y = *q
+q = q + 4
+*p = y
+p = p + 4
+</code></pre>
+<h4 id="answer-2">answer</h4>
+<pre><code>LD R1, q
+LD R2, 0(R1)
+ADD R1, R1, #4
+ST q, R1
+LD R1, p
+ST 0(R1), R2
+ADD R1, R1, #4
+ST p, R1
+</code></pre>
+<h3 id="824">8.2.4</h3>
+<p>Generate code for the following sequence assuming that x, y, and z are in memory locations:</p>
+<pre><code>    if x &lt; y goto L1
+    z = 0
+    goto L2
+L1: z = 1
+</code></pre>
+<h4 id="answer-3">answer</h4>
+<pre><code>    LD R1, x
+    LD R2, y
+    SUB R1, R1, R2
+    BLTZ R1, L1
+    LD R1, #0
+    ST z, R1
+    BR L2
+L1: LD R1, #1
+    ST z, R1
+</code></pre>
+<p>Note：实际生成代码时会把标签对应到具体的数字地址上，但这小节还没到那一步，把原本题目里的标签名拿来随便写写就好啦。</p>
+<h3 id="825">8.2.5</h3>
+<p>Generate code for the following sequence assuming that n is in a memory location:</p>
+<pre><code>    s = 0
+    i = 0
+L1: if i &gt; n goto L2
+    s = s + i
+    i = i + 1
+    goto L1
+L2:
+</code></pre>
+<h4 id="answer-4">answer</h4>
+<pre><code>Long version:
+
+    LD R1, #0
+    ST s, R1
+    ST i, R1
+L1: LD R1, i
+    LD R2, n
+    SUB R2, R1, R2
+    BGTZ R2, L2
+    LD R2, s
+    ADD R2, R2, R1
+    ST s, R2
+    ADD R1, R1, #1
+    ST i, R1
+    BR L1
+L2:
+
+Short version:
+
+    LD R2, #0
+    LD R1, R2
+    LD R3, n
+L1: SUB R4, R1, R3
+    BGTZ R4, L2
+    ADD R2, R2, R1
+    ADD R1, R1, #1
+    BR L1
+L2:
+</code></pre>
+<p>Note：短版本的优化 1）消除冗余存-读 2）循环不变代码外提 3）然后外加寄存器分配</p>
+<h3 id="826">8.2.6</h3>
+<p>Determine the costs of the following instruction sequences:</p>
+<pre><code>1.  LD R0, y
+    LD R1, z
+    ADD R0, R0, R1
+    ST x, R0
+
+2.  LD R0, i
+    MUL R0, R0, 8
+    LD R1, a(R0)
+    ST b, R1
+
+3.  LD R0, c
+    LD R1, i
+    MUL R1, R1, 8
+    ST a(R1),R0
+
+4.  LD R0, p
+    LD R1, 0(R0)
+    ST x, R1
+
+5.  LD R0, p
+    LD R1, x
+    ST 0(R0), R1
+
+6.  LD R0, x
+    LD R1, y
+    SUB R0, R0, R1
+    BLTZ *R3, R0
+</code></pre>
+<h4 id="answer-5">answer</h4>
+<ol>
+<li>2 + 2 + 1 + 2 = 7</li>
+<li>2 + 2 + 2 + 2 = 8</li>
+<li>2 + 2 + 2 + 2 = 8</li>
+<li>2 + 2 + 2 = 6</li>
+<li>2 + 2 + 2 = 6</li>
+<li>2 + 2 + 1 + 1 = 6</li>
+</ol>
+<p>Note：这本书用的指令集没明确定义所有指令的细节，但看起来所谓用变量名来指定内存地址实际上隐含着这些变量是静态分配的假设，也就是说在真正生成完的指令里这些变量名都会被替换为它们对应的数字形式的地址常量，而地址存在指令后的一个额外的word里，这就算多一单位的开销。</p>
+<hr>
+<h3 id="note">Note</h3>
+<ol>
+<li>
+<p>很明显本节内容写得非常随意，推荐数字常量是应该都加#前缀的，除了放在地址里用。比如 <code>LD R1, #1</code> 和 <code>ADD R1, R1, #1</code>。</p>
+</li>
+<li>
+<p>本书中 Ri 表示第 i 号寄存器。</p>
+<ol>
+<li>
+<p>在翻译成汇编码的过程中，是可以随意指定 i 的值（比如 R3, R4, R1000）呢还是会有某种限制？</p>
+<p>回答：现在暂时随意。等后面说寄存器个数有限制的时候再考虑有限制的情况。</p>
+</li>
+<li>
+<p>另外，如果代码中所示的 R1 在后面的代码中用不着了，那么新的值是不是可以被加载到 R1 中？如果可以的话，如何知道之前的 R1 用不着了？</p>
+<p>回答：可以覆盖。至于如何知道前面的值死了就要看 def-use 链。这是优化的重要问题。例如9.2.5小节讲 live variable 就跟这个有关。</p>
+</li>
+</ol>
+</li>
+<li>
+<p>b = a[i] 对应的汇编码：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">LD R1, i
+MUL R1, R1, 8
+LD R2, a(R1)
+...
+</code></pre></td></tr></table>
+</div>
+</div><p>其中 a 为什么不需要先 load 到寄存器？</p>
+<p>回答：这里隐含一个假设：变量是静态分配存储的。后面涉及不是静态变量的时候情况会有变化。</p>
+</li>
+</ol>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Wikipedia</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2021-08-30
+        
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">License</span>
+    <span class="item-content"><a rel="license noopener" href="https://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License" target="_blank">Creative Commons Attribution-ShareAlike License</a></span>
+  </p>
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/preview/">preview</a>
+          <a href="/tags/%E4%B8%AD%E6%96%87/">中文</a>
+          <a href="/tags/tag-1/">tag-1</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/ch07/7.7/7.7/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">7.7</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/post/ch08/8.3/8.3/">
+            <span class="next-text nav-default">8.3</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:your@email.com" class="iconfont icon-email" title="email"></a>
+      <a href="http://localhost:1313" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="http://localhost:1313" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="http://localhost:1313" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="http://localhost:1313" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://localhost:1313" class="iconfont icon-google" title="google"></a>
+      <a href="http://localhost:1313" class="iconfont icon-github" title="github"></a>
+      <a href="http://localhost:1313" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="http://localhost:1313" class="iconfont icon-zhihu" title="zhihu"></a>
+      <a href="http://localhost:1313" class="iconfont icon-douban" title="douban"></a>
+      <a href="http://localhost:1313" class="iconfont icon-pocket" title="pocket"></a>
+      <a href="http://localhost:1313" class="iconfont icon-tumblr" title="tumblr"></a>
+      <a href="http://localhost:1313" class="iconfont icon-instagram" title="instagram"></a>
+      <a href="http://localhost:1313" class="iconfont icon-gitlab" title="gitlab"></a>
+      <a href="http://localhost:1313" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="http://localhost:1313/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>olOwOlo</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

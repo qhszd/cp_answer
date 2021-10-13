@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>4.key-point - Even - A super concise theme for Hugo</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Wikipedia" /><meta name="description" content="第4章要点 ！LR(0), SLR, LR, LALR 之间的区别 p157: LR(0) 自动机是如何做出移入-规约决定的？假设文法符号串 γ 使得 LR(0) 自动机从开始状态 0 运行到某个状态 j，那么" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.88.1 with theme even" />
+
+
+<link rel="canonical" href="http://localhost:1313/post/ch04/key-point/key-point/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="4.key-point" />
+<meta property="og:description" content="第4章要点 ！LR(0), SLR, LR, LALR 之间的区别 p157: LR(0) 自动机是如何做出移入-规约决定的？假设文法符号串 γ 使得 LR(0) 自动机从开始状态 0 运行到某个状态 j，那么" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/post/ch04/key-point/key-point/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-08-30T01:37:56+08:00" />
+<meta property="article:modified_time" content="2021-08-30T01:37:56+08:00" />
+
+<meta itemprop="name" content="4.key-point">
+<meta itemprop="description" content="第4章要点 ！LR(0), SLR, LR, LALR 之间的区别 p157: LR(0) 自动机是如何做出移入-规约决定的？假设文法符号串 γ 使得 LR(0) 自动机从开始状态 0 运行到某个状态 j，那么"><meta itemprop="datePublished" content="2021-08-30T01:37:56+08:00" />
+<meta itemprop="dateModified" content="2021-08-30T01:37:56+08:00" />
+<meta itemprop="wordCount" content="805">
+<meta itemprop="keywords" content="preview,中文,tag-1," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="4.key-point"/>
+<meta name="twitter:description" content="第4章要点 ！LR(0), SLR, LR, LALR 之间的区别 p157: LR(0) 自动机是如何做出移入-规约决定的？假设文法符号串 γ 使得 LR(0) 自动机从开始状态 0 运行到某个状态 j，那么"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Even</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Even</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">4.key-point</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2021-08-30 </span>
+        <div class="post-category">
+            <a href="/categories/%E4%B8%AD%E6%96%87/"> 中文 </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#第4章要点">第4章要点</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#lr0-slr-lr-lalr-之间的区别">！LR(0), SLR, LR, LALR 之间的区别</a></li>
+            <li><a href="#消除二义性-p134">消除二义性 （p134）</a></li>
+            <li><a href="#消除左递归-p135">消除左递归 （p135）</a></li>
+            <li><a href="#使用-lr0-创建出-lalr1-项集的内核-p173">使用 LR(0) 创建出 LALR(1) 项集的内核 （p173）</a></li>
+            <li><a href="#cnf-和-bnf">CNF 和 BNF</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h1 id="第4章要点">第4章要点</h1>
+<h3 id="lr0-slr-lr-lalr-之间的区别">！LR(0), SLR, LR, LALR 之间的区别</h3>
+<p>p157: LR(0) 自动机是如何做出移入-规约决定的？假设文法符号串 γ 使得 LR(0) 自动机从开始状态 0 运行到某个状态 j，那么如果下一个输入符号为 a 且状态 j 有一个在 a 上的转换，就移入 a，否则就进行规约。</p>
+<p>这种方法会导致一些错误的规约，假定规约后的符号为 X，但 a 并不在 FOLLOW(X) 中，这种情况下就会有问题。所以 SLR 在这方面进行了改进。</p>
+<p>p161：构造一个 SLR 分析表时，如果 [A -&gt; α.] 在 I_i 中，那么对于 FOLLOW(A) 中的所有 a，将 ACTION[i, a] 设置为 “规约 A -&gt; α”</p>
+<p>SLR 一定程度上解决了错误规约的问题，但没有完全解决。因为虽然 a 在 FOLLOW(A) 中才会选择规约，但是就当前所处的状态 I_i 而言，并不是每个 FOLLOW(A) 中的终结符都可以出现在状态 I_i 中的 A 后面。</p>
+<p>p166: 用更正式一点的语言来讲，必须要为 I_i 精确得指明哪些输入符号可以更在句柄 α 后面，从而使 α 可以被规约为 A。</p>
+<p>LR 通过在项中加入第二个分量，即向前看符号来解决这个问题。但新的问题是 LR 会使得状态表及其庞大，而 LALR 就是一种比较经济的做法，它具有和 SLR 一样多的状态。</p>
+<p>p170：一般地说，通过将具有相同核心项集的 LR 项集合并，可以得到 LALR 项集。虽然 LALR 可能会进行一些错误的规约，但最终会在输入任何新的符号之前发现这个错误。</p>
+<h3 id="消除二义性-p134">消除二义性 （p134）</h3>
+<p>图 4-10，如何得出这个消除方法的？</p>
+<h3 id="消除左递归-p135">消除左递归 （p135）</h3>
+<p>为什么图 4-11 的算法能消除文法中的左递归？</p>
+<p>消除递归需满足两个条件：</p>
+<ol>
+<li>不存在立即左递归，即不存在形似这样的产生式 A -&gt; Aα 。</li>
+<li>不存在由多步推导可产生的左递归。</li>
+</ol>
+<p>算法 3~5 行循环的结果使得形如 A_i -&gt; A_m α 的产生式一定满足 m &gt;= i ，就消除了形如 S =&gt; Aa =&gt; Sda 这样的转换可能，也就是说由 A_m 一定推导不出以 A_i 开头的产生式，A_m α 就不存在产生 A-i 左递归的可能。</p>
+<p><strong>同时需要注意的是：</strong> 只需要处理 A_i -&gt; A_j α 这样的产生式，而不需要处理形如 A_i -&gt; α A_j β 这样的产生式</p>
+<p>循环完成后，第 6 行消除了替换后的产生式中的立即左递归。</p>
+<h3 id="使用-lr0-创建出-lalr1-项集的内核-p173">使用 LR(0) 创建出 LALR(1) 项集的内核 （p173）</h3>
+<p>自发生成的和传播的向前看符号</p>
+<h3 id="cnf-和-bnf">CNF 和 BNF</h3>
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Chomsky_normal_form">Chomsky normal form</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Backus%E2%80%93Naur_Form">Backus Naur Form</a></li>
+</ul>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Wikipedia</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2021-08-30
+        
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">License</span>
+    <span class="item-content"><a rel="license noopener" href="https://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License" target="_blank">Creative Commons Attribution-ShareAlike License</a></span>
+  </p>
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/preview/">preview</a>
+          <a href="/tags/%E4%B8%AD%E6%96%87/">中文</a>
+          <a href="/tags/tag-1/">tag-1</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/ch04/4.7/4.7/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">4.7</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/post/ch05/5.1/5.1/">
+            <span class="next-text nav-default">5.1</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:your@email.com" class="iconfont icon-email" title="email"></a>
+      <a href="http://localhost:1313" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="http://localhost:1313" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="http://localhost:1313" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="http://localhost:1313" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://localhost:1313" class="iconfont icon-google" title="google"></a>
+      <a href="http://localhost:1313" class="iconfont icon-github" title="github"></a>
+      <a href="http://localhost:1313" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="http://localhost:1313" class="iconfont icon-zhihu" title="zhihu"></a>
+      <a href="http://localhost:1313" class="iconfont icon-douban" title="douban"></a>
+      <a href="http://localhost:1313" class="iconfont icon-pocket" title="pocket"></a>
+      <a href="http://localhost:1313" class="iconfont icon-tumblr" title="tumblr"></a>
+      <a href="http://localhost:1313" class="iconfont icon-instagram" title="instagram"></a>
+      <a href="http://localhost:1313" class="iconfont icon-gitlab" title="gitlab"></a>
+      <a href="http://localhost:1313" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="http://localhost:1313/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>olOwOlo</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
